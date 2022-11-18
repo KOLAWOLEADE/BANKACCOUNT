@@ -1,3 +1,10 @@
+let bankAccount = new BANKACCOUNT
+let contact1 = new Contact (Nana, Akuaba, 07033333333)
+let contact2 = new Contact (Johnson, Alomaja, 08033333333)
+let contact3 = new Contact (Johnson, Bolaji, 09033333333)
+bankAccount.addContanct = 
+
+
 // BANKACCOUNT OPENING
 
 function BANKACCOUNT(){
@@ -11,8 +18,14 @@ function BANKACCOUNT(){
 function contacts (firstName, lastName, phoneNumber){
     this.firstName = firstName;
     this.lastName = lastName;
-    this.phoneNumber = phoneNumber
+    this.phoneNumber = phoneNumber;
 }
+
+// PLACING ID AND CONTACT SIDE BY SIDE
+BANKACCOUNT.addContanct = function (contact){
+    contact.Id = this.assignId();
+    this.contacts[contact.Id] = contact;
+};
 
 
 
@@ -23,9 +36,12 @@ BANKACCOUNT.assignNumber = function() {
     return accountNumber;
 };
 
-// ASSINGING ID NUMBER TO EACH ACCOUNT
+// ASSINGING ID NUMBER TO EACH ACCOUNT AND ID INCREMENT
 
 BANKACCOUNT.assignId = function(){
     currentId ++;
     return currentId;
 };
+
+
+
